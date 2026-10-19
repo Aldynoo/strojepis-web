@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strojepis — DOS v brskalniku</title>
+  <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0b0f0c;
+      color: #e8f0e8;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1f2a20;
+      background: #111813;
+    }
+    h1 {
+      margin: 0 0 4px;
+      font-size: 1.2rem;
+      color: #7cff7c;
+    }
+    p {
+      margin: 0;
+      color: #b7c4b7;
+      font-size: 0.95rem;
+    }
+    #dos {
+      flex: 1;
+      min-height: 0;
+      background: #000;
+    }
+    footer {
+      padding: 10px 16px 14px;
+      color: #9aa89a;
+      font-size: 0.9rem;
+      border-top: 1px solid #1f2a20;
+    }
+    code {
+      color: #7cff7c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Strojepis</h1>
+    <p>DOS se zaganja v brskalniku. Kliknite na črni zaslon, nato vpišite <code>asdf</code>, <code>fdsa</code> ali <code>fdsa2</code>.</p>
+  </header>
+  <div id="dos"></div>
+  <footer>
+    Enako okolje kot vaš DOSBox: ukazni poziv C:\, programi in mapa VAJE. Za zvok dovolite zvok v brskalniku.
+  </footer>
+  <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+  <script>
+    Dos(document.getElementById("dos"), {
+      url: "strojepis.jsdos",
+      autoStart: true,
+      kiosk: true,
+      theme: "dark",
+      backend: "dosbox",
+      backendLocked: true,
+      imageRendering: "pixelated"
+    });
+  </script>
+</body>
+</html>
